@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS "User";
+
+CREATE TABLE "User" (
+    "user_id" SERIAL PRIMARY KEY,
+    "username" VARCHAR(24) NOT NULL UNIQUE,
+    "first_name" VARCHAR(24) NOT NULL,
+    "last_name" VARCHAR(24) NOT NULL,
+    "password" VARCHAR(24) NOT NULL CONSTRAINT PASSWORD_MIN_LENGTH CHECK  (LENGTH(password) > 5)
+);
